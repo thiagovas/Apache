@@ -29,23 +29,12 @@ If you found this repo you are probably looking into Docker or already have know
 * **postfix.sh** - Used by *supervisord.conf* to start Postfix
 * **run.sh** - Setup apache, move around conf files, start process on container
 * **sample.conf** - Move and edit this file into `/data/apache2/sites-enabled` to host the various domains you need to host
-* **supervisord.conf** - Supervisor is a client/server system that allows its users to monitor and control a number of processes on UNIX-like operating systems
-
-#####Base Container
-* A base container used by other builds to make the creation process faster
-
-#####Data Container
-* Files and data for Apache is stored here 
-
-#####[Postfix Mail Server](https://github.com/htmlgraphic/Postfix)
-* [Github Repo](https://github.com/htmlgraphic/Postfix)
-
-#####MySQL server
-* `make build`
-* `make run` create a stateless data container and start a MySQL instance storing data on the simple **Busybox** data container
+* **supervisord.conf** - Supervisor is a client / server system that allows its users to monitor and control a number of processes on UNIX-like operating systems
 
 
 ##Build Tests
-As you continue to build more containers and extend functions, a very useful tool is using a *test driven development* solution. This repo is setup to use [CircleCI](https://circleci.com/gh/htmlgraphic/Docker) and have numerous tests set within `circle.yml`. It is very good to know that your built containers pass all the tests you define before setup in production.
+As you continue to build more containers and extend functions, a very useful tool is using a *test driven development* solution. It is very good to know that your built containers pass all the tests you define before setup in production.
 
-As each Docker container is split into its own repo deeper tests and master builds will be managed via a build a deployment service called [Shippable](http://shippable.com)
+* To use [CircleCI](https://circleci.com/gh/htmlgraphic/Docker) review the `circle.yml` file. 
+* To use [Shippable](http://shippable.com) review the `shippable.yml` file. This service will use a `circle.yml` file configuration but for the unique features provided by **Shippable** it is best to use the deadicated `shippable.yml` file. This service will fully test the creation of your container and can push the complete image to your private Docker repo if you desire.
+
