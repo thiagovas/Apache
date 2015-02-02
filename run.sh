@@ -60,6 +60,7 @@ echo "ntpdate ntp.ubuntu.com" > /etc/cron.daily/ntpdate && chmod 755 /etc/cron.d
 # Postfix uses smart hosts in cluster to relay email
 postconf -e \
 	relayhost=[post-office.htmlgraphic.com]:25 \
+    smtp_sasl_password_maps=static:$USER:$PASS \
 	inet_protocols=ipv4
 
 # Postfix is not using /etc/resolv.conf is because it is running inside a chroot jail, needs its own copy.
