@@ -34,15 +34,15 @@ Consistent testing is important when making any edits, large or small. By using 
 
 #####Apache Web Server
 * **.dockerignore** - Files that should be ignored during the build process
-* **apache-config.conf** - The default configuration used by Apache
+* **app/apache-config.conf** - The default configuration used by Apache
 * **Dockerfile** - Uses a basefile build to help speed up the docker container build process
-* **index.php** - Default page displayed via Apache, type in the IP address of the running container and this page should load
-* **mac-permissions.sh** - Run manually on container to match uid / gid permissions of local docker container to Mac OS X
+* **app/index.php** - Default page displayed via Apache, type in the IP address of the running container and this page should load
+* **app/mac-permissions.sh** - Run manually on container to match uid / gid permissions of local docker container to Mac OS X
 * **Makefile** - A helpful file used to streamline the creation of containers
-* **postfix-local-setup.sh** - Script ran manually on container to direct email to a gated email relay server, no emails are sent out to actual inboxes
-* **postfix.sh** - Used by *supervisord.conf* to start Postfix
-* **run.sh** - Setup apache, move around conf files, start process on container
-* **sample.conf** - Move and edit this file into `/data/apache2/sites-enabled` to host the various domains you need to host
+* **app/postfix-local-setup.sh** - Script ran manually on container to direct email to a gated email relay server, no emails are sent out to actual inboxes
+* **app/postfix.sh** - Used by *supervisord.conf* to start Postfix
+* **app/run.sh** - Setup apache, move around conf files, start process on container
+* **app/sample.conf** - Move and edit this file into `/data/apache2/sites-enabled` to host the various domains you need to host
 *   **shippable.yml** - Configuration file used by [Shippable](Shippable.com)
 * **supervisord.conf** - Supervisor is a client / server system that allows its users to monitor and control a number of processes on UNIX-like operating systems
 
