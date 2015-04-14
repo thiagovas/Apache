@@ -6,7 +6,7 @@ if [ ! -d /data/www/public_html ]; then
 	
 	# Move default coming soon page...
 	mkdir -p /data/www/public_html
-	mv /opt/temp.php /data/www/public_html/index.php
+	mv /opt/index.php /data/www/public_html/index.php
 
 fi
 
