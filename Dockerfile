@@ -50,7 +50,7 @@ ENV APACHE_LOCK_DIR /var/lock/apache2
 ENV APACHE_PID_FILE /var/run/apache2.pid
 
 # Add self signed SHA256 certs
-ADD ./ssl /opt
+ADD ./app/ssl /opt/ssl
 
 # Copy files / scripts to build application, add coming page to root apache dir
 ADD ./app /opt
