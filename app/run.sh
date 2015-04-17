@@ -51,7 +51,7 @@ if [ ! -f /etc/php5/apache2/build ]; then
     # Update the PHP.ini file, enable <? ?> tags and quiet logging.
     sed -i "s/short_open_tag = Off/short_open_tag = On/" /etc/php5/apache2/php.ini
     sed -i "s/error_reporting = .*$/error_reporting = E_ERROR | E_WARNING | E_PARSE/" /etc/php5/apache2/php.ini
-    sed -i 's|;session.save_path = "/var/lib/php5"|session.save_path = "/tmp"|g' /etc/php5/apache2/php.ini   
+    sed -i 's|;session.save_path = "/var/lib/php5"|session.save_path = "/tmp"|g' /etc/php5/apache2/php.ini
     sed -i 's|#ServerRoot "\/etc\/apache2"|ServerRoot "\/data\/apache2"|g' /etc/apache2/apache2.conf
 
     # Allow the container to continuously update it's time
